@@ -8,9 +8,9 @@ def saveModel(model):
     json = model.to_json()  # convert the model into .json
     with open("cifar10_model.json", "w") as json_file:
         json_file.write(json)
-    model.save_weights("cifar10_model.h5")  # save the weights to .h5
+    model.save_weights("cifar10_model.h5")  # save the weights to HDF5 format
 
-# convert the model's .json file into HDF5 and apply the weight from .h5 into it
+# convert the model from .json file and apply the weight from HDF5 into it
 def loadModel():
     json = open('cifar10_model.json', 'r')
     model_json = json.read()
