@@ -25,20 +25,17 @@ def prepareData():
         # Allocate validation data into categories to be used with crossentropy
         y_train = np_utils.to_categorical(y_train, categories)
         y_test = np_utils.to_categorical(y_test, categories)
-        print(x_train.shape[1:])
 
         return (x_train, y_train, x_test, y_test)
 
 def createNetwork():
-        x_train, y_train, x_test, y_test = prepareData()
-
         batch_size = 64  # no. of training examples per iteration
         epochs = 20  # no. of iterations the neurons update their weights
         categories = 10  # CIFAR10 has 10 categories
         img_dimensions = 32  # image dimensions (n*n)
 
         # Create a new instance of CNNetwork class, which creates the network model and image data generator
-        cifar10 = CNNetwork(batch_size, categories, img_dimensions, x_train.shape[1:])
+        cifar10 = CNNetwork(batch_size, categories, img_dimensions, (32, 32, 3))
         model = cifar10.model
         model.summary()  # Show a table containing details of the created neural network
         runNetwork(model, batch_size, epochs)
