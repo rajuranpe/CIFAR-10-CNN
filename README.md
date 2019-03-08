@@ -2,3 +2,5 @@
 A simple CCN with some utilities, such as saving and retraining, for image recognition.
 
 Using Keras, Tensorflow, Numpy and Matplotlib libraries. 
+
+Achieving 80% accuracy after 50 epochs, optimization TBA.
