@@ -11,7 +11,7 @@ def prepareData():
         (x_train, y_train), (x_test, y_test) = tf.keras.datasets.cifar10.load_data()
         categories = 10
 
-        # Ensuring that the values are in 32 decimal float, which is desired for values 0<x<1
+        # Ensuring that the values are in 32 decimal float
         x_train = x_train.astype("float32")
         x_test = x_test.astype("float32")
 
