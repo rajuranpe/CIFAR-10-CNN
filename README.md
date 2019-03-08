@@ -1,5 +1,5 @@
 # CIFAR-10-Convolutional-Neural-Network
-A simple CCN with some utilities, such as saving and retraining, for image recognition.
+A Convolutional Neural Network with some utilities, such as saving and retraining, for image recognition.
 
 CIFAR-10 contains 60000 images, which are distributed into 10 categories of animals and vechiles
 
