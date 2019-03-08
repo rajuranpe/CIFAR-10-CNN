@@ -9,7 +9,6 @@ def prepareData():
         # Load the data and allocate it into correct matrices. CIFAR10 is a dataset supported by Keras.
         # http://www.cs.toronto.edu/~kriz/cifar.html
         (x_train, y_train), (x_test, y_test) = tf.keras.datasets.cifar10.load_data()
-
         categories = 10
 
         # Ensuring that the values are in 32 decimal float, which is desired for values 0<x<1
