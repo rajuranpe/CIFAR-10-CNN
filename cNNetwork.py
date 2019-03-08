@@ -5,8 +5,8 @@ class CNNetwork():
     def __init__(self, batch_size, categories, img_dimensions, x_train_shape):
         self.batch_size = batch_size
         self.categories = categories
-        self.img_dimensions = img_dimensions
-        self.x_train_shape = x_train_shape          # (32, 32, 3), where 3 is the length of the color vector (RGB)
+        self.img_dimensions = img_dimensions        # (32, 32, 3), where 3 is the length of the color vector (RGB)
+        self.x_train_shape = x_train_shape          
         self.model = self.createModel()
 
     # Convolutional neural network
