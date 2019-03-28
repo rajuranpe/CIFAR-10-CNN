@@ -36,7 +36,7 @@ def categoryName(n):
     type = category.get(n)
     return type
 
-# Show a small preview of evaluated predictions and their true values
+# Visualize a small preview of evaluated predictions and their true values in Jupyter notebook or similiar app
 def preview(model, x_test, y_test, img_dimensions, index):
     # @require index <= len(x_test) - 11
     fig = plt.figure(figsize=(50, 50))
