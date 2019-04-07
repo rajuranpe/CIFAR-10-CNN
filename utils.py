@@ -2,6 +2,7 @@ from keras.models import model_from_json
 import matplotlib.pyplot as plt
 import numpy as np
 import os
+import createNetwork
 
 # save the model and weights
 def saveModel(model):
@@ -39,7 +40,7 @@ def categoryName(n):
 # Visualize a small preview of evaluated predictions and their true values in Jupyter notebook or similiar app
 def preview(model, img_dimensions, index):
     # @require index <= len(x_test) - 11
-    x_train, y_train, x_test, y_test = prepareData()
+    x_train, y_train, x_test, y_test = createNetwork.prepareData()
     fig = plt.figure(figsize=(50, 50))
     for i in range(0, 10):
         image_index = index + i
