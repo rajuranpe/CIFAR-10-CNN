@@ -37,13 +37,14 @@ def categoryName(n):
     return type
 
 # Visualize a small preview of evaluated predictions and their true values in Jupyter notebook or similiar app
-def preview(model, x_test, y_test, img_dimensions, index):
+def preview(model, img_dimensions, index):
     # @require index <= len(x_test) - 11
+    x_train, y_train, x_test, y_test = prepareData()
     fig = plt.figure(figsize=(50, 50))
     for i in range(0, 10):
         image_index = index + i
         sub = fig.add_subplot(10, 1, i + 1)
         pred = model.predict(x_test[image_index].reshape(1, img_dimensions, img_dimensions, 3))
-        title = "Subject of the picture is probadly " + categoryName(pred.argmax()) + "\n In reality, it is " + categoryName(y_test[image_index])
+        title = "Subject of the picture is probadly " + categoryName(pred.argmax())
         sub.set_title(title)
-        sub.imshow(x_test[image_index].reshape(img_dimensions, img_dimensions), interpolation='nearest')
+        sub.imshow(x_test[image_index].reshape(img_dimensions, img_dimensions, 3), interpolation='nearest')
