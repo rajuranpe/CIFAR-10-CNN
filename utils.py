@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import os
 import createNetwork
+import sys
 
 # save the model and weights
 def saveModel(model):
@@ -13,12 +14,16 @@ def saveModel(model):
 
 # convert the model from .json file and apply the weight from HDF5 into it
 def loadModel():
-    json = open('cifar10_model.json', 'r')
-    model_json = json.read()
-    json.close()
-    model = model_from_json(model_json)
-    model.load_weights("cifar10_model.h5")
-    return model
+    try:
+        json = open('cifar10_model.json', 'r')
+        model_json = json.read()
+        json.close()
+        model = model_from_json(model_json)
+        model.load_weights("cifar10_model.h5")
+        return model
+    except FileNotFoundError:
+        print("No saved models yet! Please create a new network.")
+        sys.exit()
 
 # Function for numbers == categories
 def categoryName(n):
