@@ -10,7 +10,10 @@ if choice == "t":
     while True:
         try:
             epochs = int(input("How many epochs? Recommended 5-30 "))
-            break
+            if epochs > 0:
+                break
+            else:
+                print("Please give a positive whole number.")
         except ValueError:
             print("Please give a positive whole number.")
 
