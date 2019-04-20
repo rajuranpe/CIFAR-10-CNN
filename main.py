@@ -21,4 +21,4 @@ if choice == "t":
     createNetwork.runNetwork(model, 64, epochs)
 
 else:
-    "Please read the instruction message."
+    print("Please read the instruction message.")
