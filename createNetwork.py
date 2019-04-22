@@ -43,7 +43,7 @@ def runNetwork(model, batch_size, epochs):
         x_train, y_train, x_test, y_test = prepareData()
         # Compile the network
         model.compile(loss="categorical_crossentropy",  # use the loss function to take into note the probabilities of each category
-                optimizer="adam",                       # adaptive moment estimation
+                optimizer="rmsprop",                       # adaptive moment estimation
                 metrics=["accuracy"])                   # use accuracy as a metric of progress during training
 
         # Training
@@ -58,8 +58,8 @@ def runNetwork(model, batch_size, epochs):
 def createGenerator():   # Generator to process images and apply different methods on them to normalize data
         generator = ImageDataGenerator(
             rotation_range=15,          # Apply random rotation to images, from 0 to 180 degrees
-            width_shift_range=0.2,      # Randomly shift images horizontally, portion of the total width
-            height_shift_range=0.2,     # -||- vertically
+            width_shift_range=0.1,      # Randomly shift images horizontally, portion of the total width
+            height_shift_range=0.1,     # -||- vertically
             horizontal_flip=True,       # Randomly flip images horizontally
         )
 
