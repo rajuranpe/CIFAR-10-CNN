@@ -15,7 +15,7 @@ def saveModel(model):
 # convert the model from .json file and apply the weight from HDF5 into it
 def loadModel():
     try:
-        json = open('cifar10_model.json', 'r')
+        json = open("cifar10_model.json", "r")
         model_json = json.read()
         json.close()
         model = model_from_json(model_json)
