@@ -6,7 +6,7 @@ choice = input("Type \"n\" to create a new network or \"t\" to continue training
 if choice == "n":
     createNetwork.createNetwork()
 
-if choice == "t":
+elif choice == "t":
     while True:
         try:
             epochs = int(input("How many epochs? Recommended 5-30 "))
