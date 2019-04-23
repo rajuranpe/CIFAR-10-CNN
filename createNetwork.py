@@ -43,7 +43,7 @@ def runNetwork(model, batch_size, epochs):
         x_train, y_train, x_test, y_test = prepareData()
         # Compile the network
         model.compile(loss="categorical_crossentropy",  # use the loss function to take into note the probabilities of each category
-                optimizer="rmsprop",                       # adaptive moment estimation
+                optimizer="rmsprop",                     
                 metrics=["accuracy"])                   # use accuracy as a metric of progress during training
 
         # Training
