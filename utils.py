@@ -51,6 +51,7 @@ def preview(model, img_dimensions, index):
         image_index = index + i
         sub = fig.add_subplot(10, 1, i + 1)
         pred = model.predict(x_test[image_index].reshape(1, img_dimensions, img_dimensions, 3))
-        title = "Subject of the picture is probably " + categoryName(pred.argmax())
+        y_labels = y_test.astype(int)
+        title = "Subject of the picture is probadly " + categoryName(pred.argmax()) + " in reality, it is " + categoryName(y_labels[image_index].argmax())
         sub.set_title(title)
         sub.imshow(x_test[image_index].reshape(img_dimensions, img_dimensions, 3), interpolation='nearest')
